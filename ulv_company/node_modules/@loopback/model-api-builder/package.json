@@ -1,0 +1,48 @@
+{
+  "name": "@loopback/model-api-builder",
+  "description": "Types and helpers for packages contributing Model API builders.",
+  "version": "2.3.4",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "IBM Corp.",
+  "copyright.owner": "IBM Corp.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/loopbackio/loopback-next.git",
+    "directory": "packages/model-api-builder"
+  },
+  "engines": {
+    "node": "^10.16 || 12 || 14 || 16"
+  },
+  "scripts": {
+    "build": "lb-tsc",
+    "clean": "lb-clean loopback-model-api-builder*.tgz dist *.tsbuildinfo package",
+    "pretest": "npm run build",
+    "test": "",
+    "verify": "npm pack && tar xf loopback-model-api-builder*.tgz && tree package && npm run clean"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "README.md",
+    "dist",
+    "src",
+    "!*/__tests__"
+  ],
+  "peerDependencies": {
+    "@loopback/core": "^2.18.0",
+    "@loopback/repository": "^3.7.3"
+  },
+  "dependencies": {
+    "tslib": "^2.3.1"
+  },
+  "devDependencies": {
+    "@loopback/build": "^7.0.2",
+    "@loopback/core": "^2.18.0",
+    "@loopback/repository": "^3.7.3",
+    "@types/node": "^10.17.60"
+  },
+  "gitHead": "d9a29c85dbe38f12ba219d8c495cf6038bbc3590"
+}

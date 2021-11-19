@@ -1,0 +1,61 @@
+{
+  "name": "@loopback/rest-explorer",
+  "description": "LoopBack's API Explorer",
+  "version": "3.3.4",
+  "keywords": [
+    "LoopBack",
+    "Explorer",
+    "Swagger"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "IBM Corp.",
+  "copyright.owner": "IBM Corp.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/loopbackio/loopback-next.git",
+    "directory": "packages/rest-explorer"
+  },
+  "engines": {
+    "node": "^10.16 || 12 || 14 || 16"
+  },
+  "scripts": {
+    "build": "lb-tsc",
+    "clean": "lb-clean loopback-explorer*.tgz dist *.tsbuildinfo package",
+    "pretest": "npm run build",
+    "test": "lb-mocha \"dist/__tests__/**/*.js\"",
+    "verify": "npm pack && tar xf loopback-explorer*.tgz && tree package && npm run clean"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "README.md",
+    "dist",
+    "src",
+    "!*/__tests__",
+    "templates"
+  ],
+  "peerDependencies": {
+    "@loopback/core": "^2.18.0",
+    "@loopback/rest": "^10.1.0"
+  },
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "swagger-ui-dist": "3.52.5",
+    "tslib": "^2.3.1"
+  },
+  "devDependencies": {
+    "@loopback/build": "^7.0.2",
+    "@loopback/core": "^2.18.0",
+    "@loopback/eslint-config": "^11.0.2",
+    "@loopback/rest": "^10.1.0",
+    "@loopback/testlab": "^3.4.4",
+    "@types/ejs": "^3.1.0",
+    "@types/express": "^4.17.13",
+    "@types/node": "^10.17.60",
+    "express": "^4.17.1"
+  },
+  "gitHead": "d9a29c85dbe38f12ba219d8c495cf6038bbc3590"
+}

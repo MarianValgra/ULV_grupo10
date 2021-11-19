@@ -1,0 +1,60 @@
+{
+  "name": "@loopback/boot",
+  "description": "A collection of Booters for LoopBack 4 Applications",
+  "version": "3.4.4",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "IBM Corp.",
+  "copyright.owner": "IBM Corp.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/loopbackio/loopback-next.git",
+    "directory": "packages/boot"
+  },
+  "engines": {
+    "node": "^10.16 || 12 || 14 || 16"
+  },
+  "scripts": {
+    "acceptance": "lb-mocha \"dist/__tests__/acceptance/**/*.js\"",
+    "build": "lb-tsc",
+    "clean": "lb-clean loopback-boot*.tgz dist *.tsbuildinfo package",
+    "pretest": "npm run build",
+    "integration": "lb-mocha \"dist/__tests__/integration/**/*.js\"",
+    "test": "lb-mocha \"dist/__tests__/**/*.js\"",
+    "unit": "lb-mocha \"dist/__tests__/unit/**/*.js\"",
+    "verify": "npm pack && tar xf loopback-boot*.tgz && tree package && npm run clean"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "README.md",
+    "dist",
+    "src",
+    "!*/__tests__"
+  ],
+  "peerDependencies": {
+    "@loopback/core": "^2.18.0"
+  },
+  "dependencies": {
+    "@loopback/model-api-builder": "^2.3.4",
+    "@loopback/repository": "^3.7.3",
+    "@loopback/service-proxy": "^3.2.4",
+    "@types/debug": "^4.1.7",
+    "@types/glob": "^7.1.4",
+    "debug": "^4.3.2",
+    "glob": "^7.2.0",
+    "tslib": "^2.3.1"
+  },
+  "devDependencies": {
+    "@loopback/build": "^7.0.2",
+    "@loopback/core": "^2.18.0",
+    "@loopback/eslint-config": "^11.0.2",
+    "@loopback/rest": "^10.1.0",
+    "@loopback/rest-crud": "^0.11.2",
+    "@loopback/testlab": "^3.4.4",
+    "@types/node": "^10.17.60"
+  },
+  "gitHead": "d9a29c85dbe38f12ba219d8c495cf6038bbc3590"
+}
